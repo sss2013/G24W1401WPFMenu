@@ -1,0 +1,34 @@
+﻿<Window x:Class="G24W1401WPFMenu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:G24W1401WPFMenu"
+        mc:Ignorable="d"
+        Title="배경색 지정" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" IsMainMenu="True">
+            <MenuItem Header="파일(_F)">
+                <MenuItem Header="새로 만들기(_N)">
+                    <MenuItem Header="프로젝트(_P)"/>
+                    <MenuItem Header="파일(_F)"/>
+                </MenuItem>
+                <MenuItem 
+                    Header="열기(_O)..." 
+                    Command="Open">
+                    <MenuItem.Icon>
+                        <Image Source="Images/폰타.jpg"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="배경색(_B)">
+                <MenuItem x:Name="ItemRed" Header="빨간색(_R)" Click="SetRed"/>
+                <MenuItem x:Name="ItemGreen" Header="녹색(_G)" Click="SetGreen"/>
+                <MenuItem x:Name="ItemBlue" Header="파란색(_B)" Click="SetBlue"/>
+                <Separator/>
+                <MenuItem x:Name="ItemWhite" Header="하얀색(_W)" Click="SetWhite"/>
+            </MenuItem> 
+        </Menu>
+        <StackPanel x:Name="BackPanel" DockPanel.Dock="Bottom"/>
+    </DockPanel>
+</Window>
